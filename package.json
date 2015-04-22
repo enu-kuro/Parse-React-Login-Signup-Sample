@@ -1,0 +1,28 @@
+{
+  "name": "Parse-React-Login-Signup-Sample",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "NODE_ENV=production browserify app/index.js -t babelify | uglifyjs > public/bundle.js",
+    "watch": "watchify -d app/index.js -t babelify -o public/bundle.js -v",
+    "server": "browser-sync start --server public --files public/**/*",
+    "start": "npm run watch & npm run server"
+  },
+  "author": "enu-kuro",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^0.13.1",
+    "flux": "^2.0.0",
+    "parse": "^1.4.0",
+    "react-router": "^0.13.0",
+    "react-mixin": "^1.1.0"
+  },
+  "devDependencies": {
+    "babelify": "^5.0.4",
+    "browser-sync": "^2.3.1",
+    "browserify": "^9.0.3",
+    "uglify-js": "^2.4.17",
+    "watchify": "^2.4.0"
+  }
+}
